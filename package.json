@@ -2,7 +2,7 @@
   "author": "Zeus Lalkaka <lalkaka.zeus@gmail.com> (distracteddev.com)",
   "name": "deps",
   "description": "A executable tool that allows you to add/remove/view your current depedencies from the command line",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "url": ""
   },
@@ -13,5 +13,7 @@
   "engines": {
     "node": "*"
   },
-  "bin" : "./deps"
+  "bin": {
+    "deps": "./deps"
+  }
 }

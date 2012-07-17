@@ -35,10 +35,10 @@ if (isDev === 'dev') {
 }
 
 fs.open('package.json', 'r+', function(err, fd) {
-  //if (err) {
-  //  console.log("\033[31mERROR: package.json not found.\033[39m");
-  //  process.exit(1);
-  //}
+  if (err) {
+    console.log("\033[31mERROR: package.json not found.\033[39m");
+    process.exit(1);
+  }
   buf = new Buffer(2056);
   var read =  fs.readSync(fd, buf, 0, 2056, 0);
   var jsonString = buf.toString('utf8', 0, read);
@@ -54,9 +54,9 @@ fs.open('package.json', 'r+', function(err, fd) {
     console.error("\033[33mUSAGE: modDep {add/delete} {packageName} {packageVersion} {isDev}\033[39m");
     process.exit(1);
   } 
-  var writeBuf = new Buffer(JSON.stringify(jsonObject, null, 4));
-  fs.truncate(fd, writeBuf.length);
   if (mode !== 'show') {
+    var writeBuf = new Buffer(JSON.stringify(jsonObject, null, 4));
+    fs.truncate(fd, writeBuf.length);
     fs.writeSync(fd, writeBuf, 0, writeBuf.length, 0);
     console.log(writeBuf.toString());
   } else {

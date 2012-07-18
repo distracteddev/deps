@@ -1,19 +1,22 @@
 {
-  "author": "Zeus Lalkaka <lalkaka.zeus@gmail.com> (distracteddev.com)",
-  "name": "deps",
-  "description": "A executable tool that allows you to add/remove/view your current depedencies from the command line",
-  "version": "0.1.1",
-  "repository": {
-    "url": ""
-  },
-  "main": "deps",
-  "dependencies": {},
-  "devDependencies": {},
-  "optionalDependencies": {},
-  "engines": {
-    "node": "*"
-  },
-  "bin": {
-    "deps": "./deps"
-  }
+    "author": "Zeus Lalkaka <lalkaka.zeus@gmail.com> (distracteddev.com)",
+    "name": "deps",
+    "description": "A executable tool that allows you to add/remove/view your current depedencies from the command line",
+    "version": "0.1.1",
+    "repository": {
+        "url": ""
+    },
+    "main": "deps",
+    "dependencies": {},
+    "devDependencies": {
+        "tap": "*",
+        "read-package-json": "*"
+    },
+    "optionalDependencies": {},
+    "engines": {
+        "node": "*"
+    },
+    "bin": {
+        "deps": "./deps"
+    }
 }

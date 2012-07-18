@@ -34,7 +34,7 @@ if (isDev === 'dev') {
   dependencies = 'optionalDependencies';
 }
 
-fs.open('package.json', 'r+', function(err, fd) {
+fs.open(process.env.packageJSON || 'package.json', 'r+', function(err, fd) {
   if (err) {
     console.log("\033[31mERROR: package.json not found.\033[39m");
     process.exit(1);
